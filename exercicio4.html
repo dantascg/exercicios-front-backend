@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div v-for="produto in produtos">
+            <h2>{{ produto.nome }}</h2>
+            <p>Preço: R$ {{ produto.preco }}</p>
+
+            <button v-on:click="adicionarAoCarrinho(produto)">
+            Adicionar ao carrinho
+            </button>
+
+            <button v-if="carrinho.length > 0">
+                Finalizar compra
+            </button>
+
+        </div>
+    </div>
+
+
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    produtos : [
+                        { nome: 'celular', preco: 3000 },
+                        { nome: 'televisao', preco: 2800 },
+                        { nome: 'geladeira', preco: 2000 }
+                    ],
+                    carrinho : []
+                }
+            },
+                methods: {
+                    adicionarAoCarrinho(produto) {
+                        this.carrinho.push(produto);
+                        console.log(this.carrinho);
+                    }
+                }
+        })
+
+    
+
+        app.mount('#app')
+        </script>
+        
+</html>
