@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Blog - Página Inicial</title>
+</head>
+
+<body>
+    <h1>Bem-vindo ao Blog!</h1>
+    <p>Este é o meu primeiro template no Django 🎉</p>
+</body>
+
+    {% extends "base.html" %}
+    {% block content %}
+    <div class="container-fluid">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+    </div>
+    {% endblock %}
+
+</html>
