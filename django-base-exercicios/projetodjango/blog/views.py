@@ -17,7 +17,7 @@ def testing(request):
   return HttpResponse(template.render(context, request))
 
 
-@login_required
+@login_required  # Quando tenta entrar no perfil sem estar logado dá erro 404, adicionar redirecionamento
 def profile_view(request):
     try:
         pessoa = Pessoa.objects.get(usuario=request.user)
