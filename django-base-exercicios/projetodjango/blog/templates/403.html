@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+
+            <h1 class="display-1 text-warning">403</h1>
+            <h2 class="mb-4">Acesso Negado</h2>
+
+            <p class="lead">
+                Você não tem permissão para acessar esta página.
+            </p>
+            <p>
+                Se esta página requer login, verifique se você está conectado com a conta correta ou entre em contato
+                com o suporte.
+            </p>
+
+            <hr class="my-4">
+
+            <a href="{% url 'login' %}" class="btn btn-warning btn-lg me-2">Fazer Login</a>
+
+            <a href="{% url 'home' %}" class="btn btn-outline-secondary btn-lg">Voltar para a Home</a>
+
+        </div>
+    </div>
+</div>
+{% endblock content %}

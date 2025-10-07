@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+
+            <h1 class="display-1 text-danger">404</h1>
+            <h2 class="mb-4">Página Não Encontrada</h2>
+
+            <p class="lead">
+                Desculpe, mas a página que você está procurando não existe ou foi movida.
+            </p>
+
+            <hr class="my-4">
+
+            <a href="{% url 'home' %}" class="btn btn-primary btn-lg">Voltar para a Página Inicial</a>
+
+        </div>
+    </div>
+</div>
+{% endblock content %}

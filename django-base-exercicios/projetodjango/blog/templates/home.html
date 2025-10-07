@@ -1,28 +1,30 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Blog - Página Inicial</title>
-</head>
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Bem-vindo ao Blog! 🎉</h1>
 
-<body>
-    <h1>Bem-vindo ao Blog!</h1>
-    <p>Este é o meu primeiro template no Django 🎉</p>
-</body>
+    <p class="text-center lead">Este é o meu primeiro template no Django.</p>
 
-    {% extends "base.html" %}
-    {% block content %}
-    <div class="container-fluid">
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <div class="container mt-4 mb-4">
+        <h3 class="mb-3 text-primary">Menu de Teste Rápido (URLs)</h3>
+
+        <div class="d-flex flex-wrap gap-2 justify-content-center">
+
+            <a href="{% url 'home' %}" class="btn btn-primary btn-sm">Home</a>
+            <a href="{% url 'profile' %}" class="btn btn-info btn-sm">Perfil</a>
+
+            <a href="{% url 'login' %}" class="btn btn-success btn-sm">Login</a>
+            <a href="{% url 'cadastro' %}" class="btn btn-success btn-sm">Cadastro</a>
+            <a href="{% url 'logout' %}" class="btn btn-secondary btn-sm">Logout</a>
+            <a href="{% url 'recuperarsenha' %}" class="btn btn-warning btn-sm">Recuperar Senha</a>
+            <a href="{% url 'alterarsenha' %}" class="btn btn-warning btn-sm">Alterar Senha</a>
+
+            <a href="{% url 'erro404' %}" class="btn btn-danger btn-sm">Erro 404</a>
+            <a href="{% url 'erro403' %}" class="btn btn-danger btn-sm">Erro 403</a>
+            <a href="{% url 'erro500' %}" class="btn btn-danger btn-sm">Erro 500</a>
+
         </div>
     </div>
-    {% endblock %}
-
-</html>
+</div>
+{% endblock content %}

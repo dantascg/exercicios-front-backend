@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <h2 class="text-center mb-4">Recuperar Senha</h2>
+
+            <p class="text-center mb-4">
+                Insira seu endereço de e-mail abaixo. Você receberá um link para redefinir sua senha.
+            </p>
+
+            <form method="post">
+                {% csrf_token %}
+
+                <div class="form-group mb-4">
+                    <label for="email">E-mail</label>
+                    <input type="email" class="form-control" id="email" name="email" required
+                        placeholder="seu.email@exemplo.com">
+                </div>
+
+                <button type="submit" class="btn btn-warning w-100">Enviar Link de Redefinição</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock content %}

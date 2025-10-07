@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="padding: 20px; border: 1px solid #ccc; border-radius: 5px;">
+    <h2>Seu Perfil</h2>
+    <p><strong>Usuário (Username):</strong> {{ user.username }}</p>
+    <p><strong>E-mail Principal:</strong> {{ user.email }}</p>
+
+    <hr>
+
+    {% if pessoa %}
+    <h3>Dados Adicionais</h3>
+    <p><strong>Nome Completo:</strong> {{ pessoa.nome }}</p>
+    <p><strong>Idade:</strong> {{ pessoa.idade }} anos</p>
+    <p><strong>Data de Nascimento:</strong> {{ pessoa.data_nascimento|date:"d/m/Y" }}</p>
+    <p><strong>E-mail de Contato (Pessoa):</strong> {{ pessoa.email }}</p>
+
+    {% if pessoa.biografia %}
+    <h4>Biografia</h4>
+    <p style="border-left: 3px solid #007bff; padding-left: 10px;">{{ pessoa.biografia }}</p>
+    {% endif %}
+
+    {% else %}
+    <p style="color: orange;">Seu objeto "Pessoa" ainda não foi vinculado ao seu usuário. Se você é um administrador,
+        verifique o banco de dados. Caso contrário, contate o suporte.</p>
+    {% endif %}
+</div>
+{% endblock content %}

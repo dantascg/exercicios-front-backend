@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+
+            <h1 class="display-1 text-danger">500</h1>
+            <h2 class="mb-4">Erro Interno do Servidor</h2>
+
+            <p class="lead">
+                Ocorreu um erro inesperado e crítico.
+            </p>
+            <p>
+                <strong>Este não é um problema seu.</strong> Nossa equipe foi notificada. Por favor, tente recarregar a
+                página ou volte mais tarde.
+            </p>
+
+            <hr class="my-4">
+
+            <a href="{% url 'home' %}" class="btn btn-danger btn-lg">Voltar para a Página Inicial</a>
+
+        </div>
+    </div>
+</div>
+{% endblock content %}

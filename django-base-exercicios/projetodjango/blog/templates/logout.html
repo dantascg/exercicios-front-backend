@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4 text-center">
+
+            <h2 class="mb-4">Sessão Encerrada</h2>
+
+            <p class="lead">Você saiu da sua conta com sucesso.</p>
+            <p>Obrigado por usar o sistema.</p>
+
+            <hr class="my-4">
+
+            <a href="{% url 'login' %}" class="btn btn-primary w-100 mb-2">Fazer Login Novamente</a>
+
+            <a href="{% url 'home' %}" class="btn btn-outline-secondary w-100">Ir para a Home</a>
+
+        </div>
+    </div>
+</div>
+{% endblock content %}
